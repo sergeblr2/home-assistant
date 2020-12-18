@@ -209,8 +209,12 @@ EOF
 # Pull supervisor image
 info "Install supervisor Docker container"
 ifdown wlan0
+info "ifdown runned"
+sleep 2s
 ifup wlan0
-sleep 5s
+info "ifup runned"
+sleep 3s
+info "continue docker scripts"
 docker pull "$HASSIO_DOCKER:$HASSIO_VERSION" > /dev/null
 docker tag "$HASSIO_DOCKER:$HASSIO_VERSION" "$HASSIO_DOCKER:latest" > /dev/null
 
